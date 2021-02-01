@@ -1,0 +1,21 @@
+.trash-position{
+    position:relative;
+    top:10px;
+}
+.background-blue{
+    background-color: cornflowerblue;
+}
+.color-white{
+    color: white;
+}
+.background-gray{
+    background: lightgray;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+     color: #1d2124;
+      background-color: #e9ecef;
+ }
+
+
+
+
