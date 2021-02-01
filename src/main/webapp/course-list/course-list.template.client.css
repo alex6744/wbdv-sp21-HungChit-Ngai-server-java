@@ -1,7 +1,7 @@
 .wbdv-sticky-top {
     position: fixed;
     width: 100%;
-    background-color:#80808073;
+    background-color: cornflowerblue;
     z-index: 1;
 }
 
@@ -13,4 +13,32 @@
     right: 25px;
     bottom: 25px;
     z-index: 1;
+    color: cornflowerblue;
 }
+.background-white{
+    background: white;
+}
+.background-gray{
+    background: lightgray;
+}
+.color-white{
+    color: white;
+}
+.color-red{
+    color: red;
+}
+.course-position{
+    position: relative;
+    top: 5px;
+ }
+ .hamburger-position{
+     position: relative;
+      top: 2px;
+      left: 10px;
+  }
+  .plus-position{
+      position: relative;
+      top: 3px;
+      right:10px
+   }
+
