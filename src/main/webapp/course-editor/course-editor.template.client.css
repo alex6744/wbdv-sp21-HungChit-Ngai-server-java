@@ -15,6 +15,11 @@
      color: #1d2124;
       background-color: #e9ecef;
  }
+ .coursename-position{
+           position: relative;
+           top: 10px;
+    }
+ }
 
 
 
