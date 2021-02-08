@@ -1,14 +1,12 @@
-(function () {
+
     var $usernameFld, $passwordFld;
     var $firstNameFld, $lastNameFld, $roleFld;
     var $removeBtn, $editBtn, $createBtn;
-    var $userRowTemplate, $tbody;
+    var $tablebody;
     var userService = new AdminUserServiceClient();
-    $(main);
+    var users=[{username: 'CS5610', password:20, firstname:'Spring',lastname:'Spring',role:'Spring'}];
 
-    function main() {
 
-    }
     function createUser() {
 
     }
@@ -22,7 +20,24 @@
 
     }
     function renderUsers(users) {
-
+        $tablebody.empty()
+        for(var i=0;i<users.length;i++){
+            var user=users[i]
+            $tablebody.prepend(`
+                    <tr>
+                        <td>${user.username}</td>
+                        <td>${user.password}</td>
+                        <td>${user.firstname}</td>
+                        <td>${user.lastname}</td>
+                        <td>${user.role}</td>
+                        <td>
+                            <i class="fa fa-trash wbdv-delete" id="${i}"></i>
+                            <i class="fa fa-pencil wbdv-edit" id="${i}"></i>
+                            
+                        </td>
+                    </tr>
+            `)
+        }
     }
     function findAllUsers() {
 
@@ -30,4 +45,18 @@
     function findUserById() {
 
     } // optional - might not need this
-})();
+    function main() {
+        $usernameFld=$(".usernameFld")
+        $passwordFld=$(".passwordFld")
+        $firstNameFld=$(".firstnameFld")
+        $lastNameFld=$(".lastNameFld")
+        $roleFld=$(".roleFld")
+      //  $removeBtn=jQuery("#wbdv-create")
+        //$editBtn=jQuery("#wbdv-create")
+        $createBtn=jQuery("#wbdv-create")
+        $tablebody=jQuery("tbody")
+        //$createBtn.click(()=>)
+
+        renderUsers(users)
+    }
+jQuery(main)
