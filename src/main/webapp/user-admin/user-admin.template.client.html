@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <h1>User Admin</h1>
         <table class="table">
             <thead>
@@ -26,15 +26,15 @@
                     <th>&nbsp;</th>
                 </tr>
                 <tr class="wbdv-form">
-                    <th><input id="usernameFld" class="form-control"
+                    <th><input class="form-control usernameFld"
                                placeholder="Username" /></th>
-                    <th><input id="passwordFld" class="form-control"
+                    <th><input class="form-control passwordFld"
                                placeholder="Password" /></th>
-                    <th><input id="firstNameFld" class="form-control"
+                    <th><input class="form-control firstNameFld"
                                placeholder="First Name" /></th>
-                    <th><input id="lastNameFld" class="form-control"
+                    <th><input class="form-control lastNameFld"
                                placeholder="Last Name" /></th>
-                    <th><select id="roleFld" class="form-control">
+                    <th><select class="form-control roleFld">
                         <option value="FACULTY">Faculty</option>
                         <option value="STUDENT">Student</option>
                         <option value="ADMIN">Admin</option>
@@ -43,13 +43,16 @@
                     <th>
                         <span class="pull-right"
                               style="white-space: nowrap">
-                            <i class="fa-2x fa fa-search wbdv-search"></i>
+<!--                            <i class="fa-2x fa fa-search wbdv-search"></i>-->
                             <i class="fa-2x fa fa-plus wbdv-create"></i>
                             <i class="fa-2x fa fa-check wbdv-update"></i>
                         </span>
                     </th>
                 </tr>
             </thead>
+            <tbody>
+
+            </tbody>
         </table>
     </div>
 
