@@ -26,10 +26,10 @@
          var theId=users[theIndex].id
          console.log(theId)
          userService.deleteUser(theId).then(function (status){
-
+             users.splice(theIndex,1)
+             renderUsers(users)
         })
-        users.splice(theIndex,1)
-        renderUsers(users)
+
 
     }
     function selectUser() {
