@@ -11,7 +11,7 @@
         userService.createUser(user)
             .then(function (actualUser){
                // console.log(actualUser)
-                users.push(actualUser)
+                users.add(actualUser)
                  console.log(users)
                 console.log("usesrasr" +
                     "sddd")
