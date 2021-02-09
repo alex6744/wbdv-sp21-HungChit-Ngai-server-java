@@ -47,7 +47,7 @@
         $passwordFld.val(theUser.password)
         $firstNameFld.val(theUser.firstname)
         $lastNameFld.val(theUser.lastname)
-        $roleFld.val("weewwewe")
+        $roleFld.val("ADMIN")
     }
 
     function updateUser() {
