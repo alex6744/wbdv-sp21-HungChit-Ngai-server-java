@@ -10,10 +10,12 @@
     function createUser(user) {
         userService.createUser(user)
             .then(function (actualUser){
-                console.log(actualUser)
+               // console.log(actualUser)
                 users.push(actualUser)
-                console.log(users)
-                renderUsers(actualUser)
+                 console.log(users)
+                console.log("usesrasr" +
+                    "sddd")
+                renderUsers(users)
             })
         console.log("sdsds")
 
