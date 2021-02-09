@@ -74,7 +74,7 @@
                     <tr>
                         
                         <td>${user.username}</td>
-                        <td type="password">${user.password}</td>
+                        <td></td>
                         <td>${user.firstname}</td>
                         <td>${user.lastname}</td>
                         <td>${user.role}</td>
