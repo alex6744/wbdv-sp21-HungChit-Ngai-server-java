@@ -40,7 +40,7 @@
     function selectUser(event) {
         var selectBtn=jQuery(event.target)
         var theId=selectBtn.attr("id")
-        var theUser=users.find(function (){
+        var theUser=users.find(function (user){
             return user.id==selectBtn.attr("id")
         })
         $usernameFld.val(theUser.username)
