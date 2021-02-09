@@ -7,7 +7,12 @@
     var users=[{username: 'CS5610', password:20, firstname:'Spring',lastname:'Spring',role:'Spring'}];
 
 
-    function createUser() {
+    function createUser(user) {
+        userService.createUser(user)
+            .then(function (actualUser){
+                users.push(actualUser)
+                renderUsers(users)
+            })
 
     }
     function deleteUser() {
@@ -55,8 +60,19 @@
         //$editBtn=jQuery("#wbdv-create")
         $createBtn=jQuery("#wbdv-create")
         $tablebody=jQuery("tbody")
-        //$createBtn.click(()=>)
+        $createBtn.click(()=>
+            createUser({username:$usernameFld.val(),
+                             password: $passwordFld.val(),
+                             firstname: $firstNameFld.val(),
+                             lastname: $lastNameFld.val(),
+                              role: $roleFld.val()
+            })
+        )
+        userService.findAllUsers()
+            .then(function (actualUsersFromServer){
+                users=actualUsersFromServer
+                renderUsers(users)
+            })
 
-        renderUsers(users)
     }
 jQuery(main)
