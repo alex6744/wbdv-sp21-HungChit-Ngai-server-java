@@ -35,7 +35,7 @@ public class UserController {
 //        //return users;
 //    }
     @DeleteMapping("/api/001501828/users/{userId}")
-    public void deleteUser(@PathVariable("userId") int userId) {
+    public List<User> deleteUser(@PathVariable("userId") int userId) {
         User u=null;
         for(User user:users){
             if(user.getID()==userId){
@@ -43,7 +43,7 @@ public class UserController {
             }
         }
         users.remove(u);
-
+        return users;
     }
 
 }
