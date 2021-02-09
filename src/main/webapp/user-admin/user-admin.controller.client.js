@@ -5,7 +5,7 @@
     var $tablebody;
     var userService = new AdminUserServiceClient();
     var users=[];
-
+    var selectedUser=null;
 
     function createUser(user) {
         userService.createUser(user)
