@@ -13,9 +13,21 @@
                 users.push(actualUser)
                 renderUsers(users)
             })
+        console.log("sdsds")
 
     }
-    function deleteUser() {
+    function deleteUser(event) {
+        console.log(event.target)
+        var deleteBtn=jQuery(event.target)
+         var theClass =deleteBtn.attr("class")
+         var theIndex=deleteBtn.attr("id");
+         var theId=users[theIndex].id
+         console.log(theId)
+         userService.deleteUser(theId).then(function (status){
+
+        })
+        users.splice(theIndex,1)
+        renderUsers(users)
 
     }
     function selectUser() {
@@ -43,6 +55,7 @@
                     </tr>
             `)
         }
+        jQuery(".wbdv-delete").click(deleteUser)
     }
     function findAllUsers() {
 
@@ -58,7 +71,7 @@
         $roleFld=$(".roleFld")
       //  $removeBtn=jQuery("#wbdv-create")
         //$editBtn=jQuery("#wbdv-create")
-        $createBtn=jQuery("#wbdv-create")
+        $createBtn=jQuery(".wbdv-create")
         $tablebody=jQuery("tbody")
         $createBtn.click(()=>
             createUser({username:$usernameFld.val(),
@@ -67,6 +80,7 @@
                              lastname: $lastNameFld.val(),
                               role: $roleFld.val()
             })
+
         )
         userService.findAllUsers()
             .then(function (actualUsersFromServer){

@@ -13,12 +13,12 @@ public class UserController {
         users.add(new User(456,"al231","31efsdf3","ex","ng","student"));
 
     }
-//    // POST - Creating
-//    @PostMapping("/users")
-//    public List<User> createUser(@RequestBody User user) {
-//        users.add(user);
-//        return users;
-//    }
+    // POST - Creating
+    @PostMapping("/api/001501828/users")
+    public List<User> createUser(@RequestBody User user) {
+        users.add(user);
+        return users;
+    }
 
     // GET - Reading
     @GetMapping("/api/001501828/users")
@@ -34,10 +34,16 @@ public class UserController {
 //    public void updateUser(User user,String ID) {
 //        //return users;
 //    }
-//    @DeleteMapping("/api/001501828/users/id")
-//    public void deleteUser(User user) {
-//        users.remove(user);
-//
-//    }
+    @DeleteMapping("/api/001501828/users/{userId}")
+    public void deleteUser(@PathVariable("userId") int userId) {
+        User u=null;
+        for(User user:users){
+            if(user.getID()==userId){
+                u=user;
+            }
+        }
+        users.remove(u);
+
+    }
 
 }

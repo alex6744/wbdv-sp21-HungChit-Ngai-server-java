@@ -4,7 +4,7 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-    this.url = 'https://hungchit-ngai.herokuapp.com/api/001501828/users';
+    this.url = 'http://localhost:8080/api/001501828/users';
     var self = this;
     function createUser(user) {
         return fetch(self.url,{
@@ -29,6 +29,6 @@ function AdminUserServiceClient() {
 
     }
     function deleteUser(userId) {
-
+        return fetch(`${self.url}/${userId}`,{method:'DELETE'})
     }
 }
