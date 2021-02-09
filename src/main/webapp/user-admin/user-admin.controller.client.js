@@ -1,7 +1,7 @@
 
     var $usernameFld, $passwordFld;
     var $firstNameFld, $lastNameFld, $roleFld;
-    var $createBtn;
+    var $createBtn,$updateBtn;
     var $tablebody;
     var userService = new AdminUserServiceClient();
     var users=[];
@@ -43,6 +43,7 @@
         var theUser=users.find(function (user){
             return user.id==selectBtn.attr("id")
         })
+        selectedUser=theUser
         $usernameFld.val(theUser.username)
         $passwordFld.val(theUser.password)
         $firstNameFld.val(theUser.firstname)
@@ -51,7 +52,7 @@
     }
 
     function updateUser() {
-
+        console.log(selectedUser)
     }
     function renderUsers(users) {
         $tablebody.empty()
@@ -92,7 +93,9 @@
       //  $removeBtn=jQuery("#wbdv-create")
         //$editBtn=jQuery("#wbdv-create")
         $createBtn=jQuery(".wbdv-create")
+        $updateBtn=jQuery(".wbdv-update")
         $tablebody=jQuery("tbody")
+        $updateBtn.click(updateUser)
         $createBtn.click(()=> {
                 createUser({
                     username: $usernameFld.val(),
