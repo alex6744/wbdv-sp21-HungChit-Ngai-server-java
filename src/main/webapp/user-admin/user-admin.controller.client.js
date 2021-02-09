@@ -53,6 +53,17 @@
 
     function updateUser() {
         console.log(selectedUser)
+        selectedUser.username=$usernameFld.val()
+        selectedUser.password=$passwordFld.val()
+        selectedUser.firstname=$firstNameFld.val()
+        selectedUser.lastname=$lastNameFld.val()
+        selectedUser.role=$roleFld.val()
+        userService.updateUser(selectedUser.id,selectedUser)
+            .then(function (status){
+                var index=users.findIndex(user=>user===selectedUser.id)
+                users[index]=selectedUser
+                renderUsers(users)
+            })
     }
     function renderUsers(users) {
         $tablebody.empty()
