@@ -25,6 +25,9 @@
          var theIndex=deleteBtn.attr("id");
         console.log(users)
         console.log(users[theIndex])
+        var a=users[theIndex]
+        var c=users[theIndex].username
+        var b=users[theIndex]._id
          var theId=users[theIndex].id
          console.log(theId)
          userService.deleteUser(theId).then(function (status){
