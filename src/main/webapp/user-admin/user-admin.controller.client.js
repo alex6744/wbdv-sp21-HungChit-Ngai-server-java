@@ -74,13 +74,15 @@
                     <tr>
                         
                         <td>${user.username}</td>
-                        <td>${user.password}</td>
+                        <td type="password">${user.password}</td>
                         <td>${user.firstname}</td>
                         <td>${user.lastname}</td>
                         <td>${user.role}</td>
                         <td>
-                            <i class="fa fa-trash wbdv-delete" id="${i}"></i>
-                            <i class="fa fa-pencil wbdv-select" id="${user.id}"></i>
+                            <i class="fa fa-trash wbdv-delete" id="${i}" 
+                                title="Delete User"></i>
+                            <i class="fa fa-pencil wbdv-select" id="${user.id}"
+                                title="Select User"></i>
                             
                         </td>
                     </tr>
