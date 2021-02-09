@@ -35,10 +35,10 @@ public class UserController {
 //        //return users;
 //    }
     @DeleteMapping("/api/001501828/users/{userId}")
-    public List<User> deleteUser(@PathVariable("userId") int userId) {
+    public List<User> deleteUser(@PathVariable("userId") long userId) {
         User u=null;
         for(User user:users){
-            if(user.getID()==userId){
+            if(user.getID()==userId        ){
                 u=user;
             }
         }
