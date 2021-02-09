@@ -23,6 +23,8 @@
         var deleteBtn=jQuery(event.target)
          var theClass =deleteBtn.attr("class")
          var theIndex=deleteBtn.attr("id");
+        console.log(users)
+        console.log(users[theIndex])
          var theId=users[theIndex].id
          console.log(theId)
          userService.deleteUser(theId).then(function (status){
