@@ -30,10 +30,22 @@ public class UserController {
 //    public List<User> findUserByID(String ID) {
 //        return users;
 //    }
-//    @PutMapping("/api/001501828/users/id")
-//    public void updateUser(User user,String ID) {
-//        //return users;
-//    }
+    @PutMapping("/api/001501828/users/{userId}")
+    public List<User>  updateUser(User user,@PathVariable("userId") long userId) {
+       for(int i=0;i<users.size();i++){
+           if(users.get(i).getID()==userId){
+               users.get(i).setUsername(user.getUsername());
+               users.get(i).setPassword(user.getPassword());
+               users.get(i).setFirstname(user.getFirstname());
+               users.get(i).setLastname(user.getLastname());
+               users.get(i).setRole(user.getRole());
+               break;
+           }
+       }
+
+
+        return users;
+    }
     @DeleteMapping("/api/001501828/users/{userId}")
     public List<User> deleteUser(@PathVariable("userId") long userId) {
         User u=null;
