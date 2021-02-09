@@ -65,13 +65,14 @@
                         <td>${user.role}</td>
                         <td>
                             <i class="fa fa-trash wbdv-delete" id="${i}"></i>
-                            <i class="fa fa-pencil wbdv-edit" id="${user.id}"></i>
+                            <i class="fa fa-pencil wbdv-select" id="${user.id}"></i>
                             
                         </td>
                     </tr>
             `)
         }
         jQuery(".wbdv-delete").click(deleteUser)
+        jQuery(".wbdv-select").click(selectUser)
     }
     function findAllUsers() {
 
