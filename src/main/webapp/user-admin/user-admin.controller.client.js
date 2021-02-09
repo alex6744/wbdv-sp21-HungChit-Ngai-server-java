@@ -48,7 +48,7 @@
         $roleFld.val(theUser.role)
     }
     function findUser(user,theID){
-        return user.id==theID
+        return user.id=="456"
     }
     function updateUser() {
 
