@@ -40,12 +40,15 @@
     function selectUser(event) {
         var selectBtn=jQuery(event.target)
         var theId=selectBtn.attr("id")
-        var theUser=users.find(user=>user._id===theId)
+        var theUser=users.find(findUser)
         $usernameFld.val(theUser.username)
         $passwordFld.val(theUser.password)
         $firstNameFld.val(theUser.firstname)
         $lastNameFld.val(theUser.lastname)
         $roleFld.val(theUser.role)
+    }
+    function findUser(user,theID){
+        return user.id==theID
     }
     function updateUser() {
 
