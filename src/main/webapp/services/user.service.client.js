@@ -4,7 +4,7 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-    this.url = 'https://wbdv-generic-server.herokuapp.com/api/jannunzi/users';
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/001501828/users';
     var self = this;
     function createUser(user) {
 
@@ -31,8 +31,7 @@ function AdminUserServiceClient() {
                     'content-type': 'application/json'
                 },
                 body:JSON.stringify(user)})
-                .then(function (response){
-                    return response.json()})
+                .then(response => response.json())
     }
     function deleteUser(userId) {
         return fetch(`${self.url}/${userId}`,{method:'DELETE'})

@@ -11,13 +11,11 @@
         userService.createUser(user)
             .then(function (actualUser){
                // console.log(actualUser)
-                users=actualUser
-                 console.log(users)
-                console.log("usesrasr" +
-                    "sddd")
+                users.push(actualUser)
+
                 renderUsers(users)
             })
-        console.log("sdsds")
+
 
     }
     function deleteUser(event) {
@@ -25,12 +23,10 @@
         var deleteBtn=jQuery(event.target)
          var theClass =deleteBtn.attr("class")
          var theIndex=deleteBtn.attr("id");
-        console.log(users)
-        console.log(users[theIndex])
-
-         var theId=users[theIndex].id
+         var theId=users[theIndex]._id
          console.log(theId)
-         userService.deleteUser(theId).then(function (status){
+         userService.deleteUser(theId)
+             .then(function (status){
              users.splice(theIndex,1)
              renderUsers(users)
         })
@@ -40,33 +36,34 @@
     function selectUser(event) {
         var selectBtn=jQuery(event.target)
         var theId=selectBtn.attr("id")
-        var theUser=users.find(function (user){
-            return user.id==selectBtn.attr("id")
-        })
-        selectedUser=theUser
-        $usernameFld.val(theUser.username)
-        $passwordFld.val(theUser.password)
-        $firstNameFld.val(theUser.firstname)
-        $lastNameFld.val(theUser.lastname)
-        $roleFld.val(theUser.role.toUpperCase())
+        selectedUser=users.find(user=>user._id===theId)
+
+        $usernameFld.val(selectedUser.username)
+        $passwordFld.val(selectedUser.password)
+        $firstNameFld.val(selectedUser.firstname)
+        $lastNameFld.val(selectedUser.lastname)
+        $roleFld.val(selectedUser.role)
     }
 
     function updateUser() {
-        console.log(selectedUser)
+
         selectedUser.username=$usernameFld.val()
         selectedUser.password=$passwordFld.val()
         selectedUser.firstname=$firstNameFld.val()
         selectedUser.lastname=$lastNameFld.val()
         selectedUser.role=$roleFld.val()
         console.log(selectedUser)
-        userService.updateUser(selectedUser.id,selectedUser)
+        userService.updateUser(selectedUser._id,selectedUser)
             .then(function (status){
-                var index=users.findIndex(function (user){
-                    return user.id==selectedUser.id
-                })
+                var index=users.findIndex(user=>user._id===selectedUser._id)
                 users[index]=selectedUser
                 renderUsers(users)
             })
+        $usernameFld.val("")
+        $passwordFld.val("")
+        $firstNameFld.val("")
+        $lastNameFld.val("")
+        $roleFld.val("")
     }
     function renderUsers(users) {
         $tablebody.empty()
@@ -84,7 +81,7 @@
                         <td>
                             <i class="fa fa-trash wbdv-delete" id="${i}" 
                                 title="Delete User"></i>
-                            <i class="fa fa-pencil wbdv-select" id="${user.id}"
+                            <i class="fa fa-pencil wbdv-select" id="${user._id}"
                                 title="Select User"></i>
                             
                         </td>
