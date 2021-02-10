@@ -48,7 +48,7 @@
         $passwordFld.val(theUser.password)
         $firstNameFld.val(theUser.firstname)
         $lastNameFld.val(theUser.lastname)
-        $roleFld.val(theUser.role.toUpperCase())
+        $roleFld.val(theUser.role)
     }
 
     function updateUser() {
@@ -60,7 +60,9 @@
         selectedUser.role=$roleFld.val()
         userService.updateUser(selectedUser.id,selectedUser)
             .then(function (status){
-                var index=users.findIndex(user=>user===selectedUser.id)
+                var index=users.findIndex(function (user){
+                    return user.id==selectedUser.id
+                })
                 users[index]=selectedUser
                 renderUsers(users)
             })
