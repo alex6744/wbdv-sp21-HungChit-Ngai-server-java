@@ -48,7 +48,7 @@
         $passwordFld.val(theUser.password)
         $firstNameFld.val(theUser.firstname)
         $lastNameFld.val(theUser.lastname)
-        $roleFld.val(theUser.role)
+        $roleFld.val(theUser.role.toUpperCase())
     }
 
     function updateUser() {
