@@ -7,7 +7,7 @@ function AdminUserServiceClient() {
     this.url = 'https://wbdv-generic-server.herokuapp.com/api/jannunzi/users';
     var self = this;
     function createUser(user) {
-        //user.id=(new Date()).getTime()
+
         return fetch(self.url,{
             method:'POST',
             headers: {
