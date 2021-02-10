@@ -31,7 +31,7 @@ public class UserController {
 //        return users;
 //    }
     @PutMapping("/api/001501828/users/{userId}")
-    public List<User>  updateUser(User user,@PathVariable("userId") long userId) {
+    public List<User>  updateUser(@PathVariable("userId") long userId,User user) {
        for(int i=0;i<users.size();i++){
            if(users.get(i).getID()==userId){
                users.get(i).setUsername(user.getUsername());
