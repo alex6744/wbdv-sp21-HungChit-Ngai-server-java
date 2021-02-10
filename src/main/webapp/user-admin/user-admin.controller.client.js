@@ -58,6 +58,7 @@
         selectedUser.firstname=$firstNameFld.val()
         selectedUser.lastname=$lastNameFld.val()
         selectedUser.role=$roleFld.val()
+        console.log(selectedUser)
         userService.updateUser(selectedUser.id,selectedUser)
             .then(function (status){
                 var index=users.findIndex(function (user){
