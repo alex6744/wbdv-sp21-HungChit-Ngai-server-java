@@ -14,9 +14,9 @@ function AdminUserServiceClient() {
                 'content-type': 'application/json'
             },
             body:JSON.stringify(user)})
-            .then(function (response){
-            return response.json()
-        })
+              .then(function (response){
+                    return response.json()
+              })
     }
     function findAllUsers() {
         return fetch(self.url).then(function (response){

@@ -19,17 +19,17 @@
 
     }
     function deleteUser(event) {
-        console.log(event.target)
-        var deleteBtn=jQuery(event.target)
+        // console.log(event.target)
+         var deleteBtn=jQuery(event.target)
          var theClass =deleteBtn.attr("class")
          var theIndex=deleteBtn.attr("id");
          var theId=users[theIndex]._id
          console.log(theId)
          userService.deleteUser(theId)
              .then(function (status){
-             users.splice(theIndex,1)
-             renderUsers(users)
-        })
+                users.splice(theIndex,1)
+                renderUsers(users)
+             })
 
 
     }
