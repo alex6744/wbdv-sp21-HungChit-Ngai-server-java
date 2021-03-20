@@ -1,7 +1,9 @@
 package com.example.wbdvsp21HungChitNgaiserverjava.services;
 import com.example.wbdvsp21HungChitNgaiserverjava.models.Widget;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
+@Service
 public class WidgetService {
     private List<Widget> widgets=new ArrayList<Widget>();
 
