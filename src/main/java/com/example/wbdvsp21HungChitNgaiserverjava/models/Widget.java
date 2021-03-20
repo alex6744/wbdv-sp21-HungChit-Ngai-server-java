@@ -2,7 +2,8 @@ package com.example.wbdvsp21HungChitNgaiserverjava.models;
 
 public class Widget {
     private String name;
-    private Integer id;
+    private String  id;
+    private String topicId;
     private String type;
     private Integer widgetOrder;
     private String text;
@@ -19,9 +20,10 @@ public class Widget {
 
     }
 
-    public Widget(String name, Integer id, String type, Integer widgetOrder, String text, String src, String url, Integer size, Integer width, Integer height, String cssClass, String style, String value) {
+    public Widget(String name, String id, String topicId, String type, Integer widgetOrder, String text, String src, String url, Integer size, Integer width, Integer height, String cssClass, String style, String value) {
         this.name = name;
         this.id = id;
+        this.topicId = topicId;
         this.type = type;
         this.widgetOrder = widgetOrder;
         this.text = text;
@@ -35,6 +37,23 @@ public class Widget {
         this.value = value;
     }
 
+    public Widget(String name, String id, String topicId, String type, String text, Integer size) {
+        this.name = name;
+        this.id = id;
+        this.topicId = topicId;
+        this.type = type;
+        this.text = text;
+        this.size = size;
+    }
+
+    public String getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
+    }
+
     public String getName() {
         return name;
     }
@@ -43,11 +62,11 @@ public class Widget {
         this.name = name;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
