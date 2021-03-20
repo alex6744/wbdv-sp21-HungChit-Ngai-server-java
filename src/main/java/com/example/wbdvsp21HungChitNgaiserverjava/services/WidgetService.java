@@ -53,7 +53,7 @@ public class WidgetService {
     public List<Widget> findAllWidgets(){
         return widgets;
     }
-    public Widget findWidgetById(Long wid) {
+    public Widget findWidgetById(String wid) {
         for(Widget w: widgets) {
             if(w.getId().equals(wid)) {
                 return w;
