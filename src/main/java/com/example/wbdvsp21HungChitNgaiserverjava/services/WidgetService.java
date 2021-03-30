@@ -1,15 +1,21 @@
 package com.example.wbdvsp21HungChitNgaiserverjava.services;
 import com.example.wbdvsp21HungChitNgaiserverjava.models.Widget;
+import com.example.wbdvsp21HungChitNgaiserverjava.repositories.WidgetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 @Service
 public class WidgetService {
+
+    @Autowired
+    WidgetRepository repository;
+
     private List<Widget> widgets=new ArrayList<Widget>();
 
     public Widget createWidget(String tid, Widget widget){
         widget.setTopicId(tid);
-        widget.setId(String.valueOf(new Date().getTime()));
+        widget.setId((new Date().getTime()));
         widgets.add(widget);
         return widget;
     }
