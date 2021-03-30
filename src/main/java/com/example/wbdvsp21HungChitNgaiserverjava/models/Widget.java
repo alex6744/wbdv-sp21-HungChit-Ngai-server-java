@@ -1,8 +1,17 @@
 package com.example.wbdvsp21HungChitNgaiserverjava.models;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="widgets")
 public class Widget {
+
+
     private String name;
-    private String  id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long  id;
     private String topicId;
     private String type;
     private Integer widgetOrder;
@@ -20,7 +29,7 @@ public class Widget {
 
     }
 
-    public Widget(String name, String id, String topicId, String type, Integer widgetOrder, String text, String src, String url, Integer size, Integer width, Integer height, String cssClass, String style, String value) {
+    public Widget(String name, Long id, String topicId, String type, Integer widgetOrder, String text, String src, String url, Integer size, Integer width, Integer height, String cssClass, String style, String value) {
         this.name = name;
         this.id = id;
         this.topicId = topicId;
@@ -37,7 +46,7 @@ public class Widget {
         this.value = value;
     }
 
-    public Widget(String name, String id, String topicId, String type, String text, Integer size) {
+    public Widget(String name, Long id, String topicId, String type, String text, Integer size) {
         this.name = name;
         this.id = id;
         this.topicId = topicId;
@@ -62,11 +71,11 @@ public class Widget {
         this.name = name;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
